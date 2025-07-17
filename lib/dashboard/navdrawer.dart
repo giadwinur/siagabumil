@@ -28,10 +28,7 @@ class _NavDrawerState extends State<NavDrawer> {
               gradient: LinearGradient(
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
-                colors: [
-                  Color(0xFFE91E63),
-                  Color(0xFFAD1457),
-                ],
+                colors: [Color(0xFFE91E63), Color(0xFFAD1457)],
               ),
             ),
             child: Column(
@@ -49,39 +46,21 @@ class _NavDrawerState extends State<NavDrawer> {
                             height: 80,
                             fit: BoxFit.cover,
                             errorBuilder: (context, error, stackTrace) {
-                              return const Icon(
-                                Icons.person,
-                                size: 40,
-                                color: Color(0xFFE91E63),
-                              );
+                              return const Icon(Icons.person, size: 40, color: Color(0xFFE91E63));
                             },
                           ),
                         )
-                      : const Icon(
-                          Icons.person,
-                          size: 40,
-                          color: Color(0xFFE91E63),
-                        ),
+                      : const Icon(Icons.person, size: 40, color: Color(0xFFE91E63)),
                 ),
                 const SizedBox(height: 16),
                 // App Name
                 const Text(
                   'SiAGA Bumil',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                  ),
+                  style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(height: 8),
                 // User Name
-                Text(
-                  userName,
-                  style: const TextStyle(
-                    color: Colors.white70,
-                    fontSize: 16,
-                  ),
-                ),
+                Text(userName, style: const TextStyle(color: Colors.white70, fontSize: 16)),
               ],
             ),
           ),
@@ -132,22 +111,22 @@ class _NavDrawerState extends State<NavDrawer> {
                   },
                 ),
                 const Divider(),
-                _buildDrawerItem(
-                  icon: Icons.settings,
-                  title: 'Pengaturan',
-                  onTap: () {
-                    Navigator.pop(context);
-                    // TODO: Implement settings
-                  },
-                ),
-                _buildDrawerItem(
-                  icon: Icons.info,
-                  title: 'Tentang',
-                  onTap: () {
-                    Navigator.pop(context);
-                    _showAboutDialog();
-                  },
-                ),
+                // _buildDrawerItem(
+                //   icon: Icons.settings,
+                //   title: 'Pengaturan',
+                //   onTap: () {
+                //     Navigator.pop(context);
+                //     // TODO: Implement settings
+                //   },
+                // ),
+                // _buildDrawerItem(
+                //   icon: Icons.info,
+                //   title: 'Tentang',
+                //   onTap: () {
+                //     Navigator.pop(context);
+                //     _showAboutDialog();
+                //   },
+                // ),
               ],
             ),
           ),
@@ -156,23 +135,10 @@ class _NavDrawerState extends State<NavDrawer> {
     );
   }
 
-  Widget _buildDrawerItem({
-    required IconData icon,
-    required String title,
-    required VoidCallback onTap,
-  }) {
+  Widget _buildDrawerItem({required IconData icon, required String title, required VoidCallback onTap}) {
     return ListTile(
-      leading: Icon(
-        icon,
-        color: const Color(0xFFE91E63),
-      ),
-      title: Text(
-        title,
-        style: const TextStyle(
-          fontSize: 16,
-          fontWeight: FontWeight.w500,
-        ),
-      ),
+      leading: Icon(icon, color: const Color(0xFFE91E63)),
+      title: Text(title, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500)),
       onTap: onTap,
       dense: true,
     );
@@ -195,12 +161,7 @@ class _NavDrawerState extends State<NavDrawer> {
               Text('Aplikasi untuk membantu ibu hamil dalam memantau asupan gizi dan mendapatkan konsultasi AI.'),
             ],
           ),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.of(context).pop(),
-              child: const Text('Tutup'),
-            ),
-          ],
+          actions: [TextButton(onPressed: () => Navigator.of(context).pop(), child: const Text('Tutup'))],
         );
       },
     );
